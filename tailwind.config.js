@@ -1,10 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-    'node_modules/preline/dist/*.js',
-  ],
+  darkMode: 'class',
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       spacing: {
@@ -31,8 +28,6 @@ export default {
     sans: ['Graphik', 'sans-serif'],
     serif: ['Merriweather', 'serif'],
   },
-
-  darkMode: 'class',
   // eslint-disable-next-line no-undef
-  plugins: [require('preline/plugin')],
+  plugins: [require('flowbite/plugin')],
 }
