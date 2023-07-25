@@ -1,0 +1,25 @@
+.root {
+  @apply  px-4 sm:flex sm:items-center sm:justify-between
+}
+
+.brand {
+  @apply flex-none text-xl font-semibold dark:text-white
+}
+
+.linkContainer {
+  @apply flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:pl-5
+}
+
+.link {
+  @apply font-medium text-gray-600 hover:text-gray-400
+
+}
+
+:global(.dark) .link {
+  @apply text-gray-400 hover:text-gray-500;
+}
+
+
+.active {
+  @apply font-medium text-blue-500
+}

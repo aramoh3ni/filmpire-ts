@@ -1,3 +1,4 @@
+import styles from './layout.module.css'
 import Navbar from '@/components/Navbar'
 
 interface LayoutProps {
@@ -6,9 +7,9 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="bg-gray-200 dark:bg-gray-700 min-h-screen">
-      <Navbar />
-      <div className="container mx-auto">{children}</div>
+    <div className={styles.root}>
+      <Navbar className={styles.toolbar} />
+      <div className={styles.content}>{children}</div>
     </div>
   )
 }
