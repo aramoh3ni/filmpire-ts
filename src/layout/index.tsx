@@ -6,11 +6,10 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <>
+    <div className="bg-gray-200 dark:bg-gray-700 min-h-screen">
       <Navbar />
-      {children}
-      <h4>hello from header</h4>
-    </>
+      <div className="container mx-auto">{children}</div>
+    </div>
   )
 }
 

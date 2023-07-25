@@ -1,5 +1,7 @@
 // import styles from './navbar.module.css'
 
+import { DarkThemeToggle } from 'flowbite-react'
+
 const Navbar = () => {
   return (
     <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-4 dark:bg-gray-800">
@@ -8,6 +10,8 @@ const Navbar = () => {
           Brand
         </a>
         <div className="flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:pl-5">
+          <DarkThemeToggle />
+
           <a className="font-medium text-blue-500" href="#" aria-current="page">
             Landing
           </a>
