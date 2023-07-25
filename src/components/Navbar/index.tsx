@@ -1,5 +1,3 @@
-// import styles from './navbar.module.css'
-
 import styles from './navbar.module.css'
 
 import { DarkThemeToggle } from 'flowbite-react'
@@ -13,19 +11,15 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ className }) => {
   return (
     <nav className={twMerge(styles.root, className)} aria-label="Global">
-      <a className={styles.brand} href="#">
-        Filmpire
-      </a>
+      <span className={styles.brand}>Filmpire</span>
 
       <div className={styles.linkContainer}>
         <DarkThemeToggle />
 
-        <a className={styles.active} href="#" aria-current="page">
+        <span className={styles.active} aria-current="page">
           Landing
-        </a>
-        <a className={styles.link} href="#">
-          Account
-        </a>
+        </span>
+        <span className={styles.link}>Account</span>
       </div>
     </nav>
   )

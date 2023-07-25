@@ -1,5 +1,5 @@
 .root {
-  @apply  px-4 sm:flex sm:items-center sm:justify-between
+  @apply  px-4
 }
 
 .brand {
