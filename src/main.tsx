@@ -1,3 +1,6 @@
+import 'preline'
+import '@/main.css'
+
 import ReactDOM from 'react-dom'
 
 import App from '@/components/App'
