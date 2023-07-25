@@ -1,8 +1,19 @@
-import 'preline'
-import '@/main.css'
+import './main.css'
 
-import ReactDOM from 'react-dom'
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { RouterProvider } from 'react-router-dom'
 
-import App from '@/components/App'
+import Layout from '@/layout'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+import { router } from '@/routes'
+
+const root = document.getElementById('root')!
+
+createRoot(root).render(
+  <React.StrictMode>
+    <Layout>
+      <RouterProvider router={router} />
+    </Layout>
+  </React.StrictMode>
+)
