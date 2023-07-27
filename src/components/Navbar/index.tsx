@@ -1,6 +1,11 @@
 import styles from './navbar.module.css'
 
-import { DarkThemeToggle, Avatar, TextInput, Navbar } from 'flowbite-react'
+import {
+  DarkThemeToggle,
+  Avatar,
+  TextInput,
+  Navbar as Nav,
+} from 'flowbite-react'
 import { HTMLProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
@@ -10,10 +15,10 @@ interface NavbarProps {
   className?: HTMLProps<HTMLElement>['className']
 }
 
-const Nav: React.FC<NavbarProps> = ({ className }) => {
+export const Navbar: React.FC<NavbarProps> = ({ className }) => {
   return (
-    <Navbar fluid rounded className={twMerge(styles.root, className)}>
-      <Navbar.Toggle />
+    <Nav fluid rounded className={twMerge(styles.root, className)}>
+      <Nav.Toggle />
 
       <TextInput
         id="base"
@@ -23,24 +28,22 @@ const Nav: React.FC<NavbarProps> = ({ className }) => {
         rightIcon={AiOutlineSearch}
       />
 
-      <Navbar.Collapse className={styles.collapse}>
-        <Navbar.Link className={styles.link} href="/movies">
+      <Nav.Collapse className={styles.collapse}>
+        <Nav.Link className={styles.link} href="/movies">
           Movies
-        </Navbar.Link>
-        <Navbar.Link>
+        </Nav.Link>
+        <Nav.Link>
           <DarkThemeToggle className="rounded-full" />
-        </Navbar.Link>
-        <Navbar.Link>
+        </Nav.Link>
+        <Nav.Link>
           <Avatar
             bordered
             alt="avatar of Alireza Mohseni"
             img="https://t3.ftcdn.net/jpg/03/42/99/68/360_F_342996846_tHMepJOsXWwbvMpG7uiYpE68wbfQ9e4s.jpg"
             rounded
           />
-        </Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
+        </Nav.Link>
+      </Nav.Collapse>
+    </Nav>
   )
 }
-
-export default Nav
