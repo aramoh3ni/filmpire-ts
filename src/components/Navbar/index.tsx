@@ -19,13 +19,12 @@ const Nav: React.FC<NavbarProps> = ({ className }) => {
         id="base"
         sizing="md"
         type="text"
-        color="gray"
         placeholder="Search"
         rightIcon={AiOutlineSearch}
       />
 
-      <Navbar.Collapse className="bg-gray-dark md:bg-transparent z-0 rounded-md mt-4 md:mt-0">
-        <Navbar.Link className="md:mt-3" href="/movies">
+      <Navbar.Collapse className={styles.collapse}>
+        <Navbar.Link className={styles.link} href="/movies">
           Movies
         </Navbar.Link>
         <Navbar.Link>

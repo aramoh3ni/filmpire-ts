@@ -2,24 +2,11 @@
   @apply px-4
 }
 
-.brand {
-  @apply flex-none text-xl font-semibold dark:text-white
-}
-
-.linkContainer {
-  @apply flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:pl-5
+.collapse {
+  @apply bg-gray-dark md:bg-transparent z-0 rounded-md mt-4 md:mt-0
 }
 
 .link {
-  @apply font-medium text-gray-600 hover:text-gray-400
+  @apply md:mt-3
 
-}
-
-:global(.dark) .link {
-  @apply text-gray-400 hover:text-gray-500;
-}
-
-
-.active {
-  @apply font-medium text-blue-500
 }
