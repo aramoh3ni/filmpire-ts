@@ -1,9 +1,21 @@
+.body {
+  @apply grow
+}
+
+.content {
+  @apply p-8
+}
+
 .root {
-  @apply flex flex-col min-h-screen bg-gray-300 
+  @apply flex min-h-screen bg-gray-300 
 }
 
 :global(.dark) .root {
   @apply bg-gray-800 text-gray-100;
+}
+
+.sidebarContainer {
+  @apply absolute md:relative w-full md:w-auto z-10 md:z-0
 }
 
 .toolbar {
@@ -14,6 +26,6 @@
   @apply bg-gray-700 text-gray-100;
 }
 
-.content {
-  @apply grow p-8
-}
+
+
+

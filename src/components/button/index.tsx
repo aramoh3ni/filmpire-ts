@@ -1,7 +1,5 @@
 import styles from './button.module.css'
 
-const Button = () => {
+export const Button = () => {
   return <div className={styles.main}>index</div>
 }
-
-export default Button
