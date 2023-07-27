@@ -15,7 +15,7 @@
 }
 
 .root {
-  @apply sm:w-80 bg-gray-200/95 min-h-screen flex flex-col gap-4 p-4 justify-between overflow-y-scroll
+  @apply sm:w-fit bg-gray-200/95 min-h-screen flex flex-col gap-4 p-4 justify-between overflow-y-scroll
 }
 
 :global(.dark) .root {

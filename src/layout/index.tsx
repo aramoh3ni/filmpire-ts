@@ -1,12 +1,10 @@
 import styles from './layout.module.css'
-import { Drawer, Navbar } from '@/components'
+import { Drawer, Navbar, Sidebar } from '@/components'
 import { useSidebarStore } from '@/store/useSidebarStore'
 
-interface LayoutProps {
-  children: React.ReactNode
-}
+import { Outlet } from 'react-router-dom'
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC = () => {
   const isSidebarOpen = useSidebarStore((state) => state.isSidebarOpen)
   const toggleSidebar = useSidebarStore((state) => state.toggleSidebar)
 
@@ -14,12 +12,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className={styles.root}>
       <div className={styles.sidebarContainer}>
         <Drawer open={isSidebarOpen} setOpen={toggleSidebar}>
-          Sidebar
+          <Sidebar />
         </Drawer>
       </div>
       <div className={styles.body}>
         <Navbar className={styles.toolbar} onSidebarClick={toggleSidebar} />
-        <div className={styles.content}>{children}</div>
+        <div className={styles.content}>
+          <Outlet />
+        </div>
       </div>
     </div>
   )
