@@ -1,12 +1,8 @@
+.navMenu {
+  @apply hidden md:flex gap-4
+}
+
 .root {
-  @apply px-4
+  @apply px-4 
 }
 
-.collapse {
-  @apply bg-gray-dark md:bg-transparent z-0 rounded-md mt-4 md:mt-0
-}
-
-.link {
-  @apply md:mt-3
-
-}

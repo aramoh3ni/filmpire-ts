@@ -1,0 +1,27 @@
+.brand {
+  @apply text-xl text-blue-700 font-bold
+}
+
+.footer {
+  @apply flex gap-4 justify-between sm:hidden
+ }
+  
+.header {
+  @apply flex justify-between
+}
+
+:global(.dark) .brand {
+  @apply  text-gray-100;
+}
+
+.root {
+  @apply sm:w-80 bg-gray-200/95 min-h-screen flex flex-col gap-4 p-4 justify-between overflow-y-scroll
+}
+
+:global(.dark) .root {
+  @apply bg-gray-700/95 text-gray-100;
+}
+
+.toggleButton {
+  @apply sm:hidden
+}
