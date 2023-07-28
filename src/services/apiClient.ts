@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import { APIClientReturn } from '@/types'
+
 const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_REACT_APP_BASE_URL,
   params: {
@@ -7,17 +9,10 @@ const axiosInstance = axios.create({
   },
 })
 
-export interface APIClientReturn<T> {
-  page: number
-  results: T[]
-  total_pages: number
-  total_results: number
-}
-
 class APIClient<T> {
   constructor(public endpoint: string) {}
 
-  getAll = async () => {
+  getAll = async (): Promise<APIClientReturn<T>> => {
     const res = await axiosInstance.get<APIClientReturn<T>>(this.endpoint)
     return res.data
   }

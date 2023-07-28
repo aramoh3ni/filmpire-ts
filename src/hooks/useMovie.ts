@@ -1,17 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
-
-import { Movie } from '@/types'
-import APIClient, { APIClientReturn } from '@/services/apiClient'
-
-const PAGE = 1
-
-const END_POINT = `/movie/popular?page=${PAGE}`
-
-const apiClient = new APIClient<Movie>(END_POINT)
+import movieService, { MovieService } from '@/services/movieService'
 
 export const useMovieQuery = () =>
-  useQuery<APIClientReturn<Movie>, Error>({
+  useQuery<MovieService, Error>({
     queryKey: ['movies'],
-    queryFn: apiClient.getAll,
+    queryFn: movieService.getAll,
     staleTime: 10 * 1000,
   })
