@@ -7,12 +7,17 @@ import { RouterProvider } from 'react-router-dom'
 import { router } from '@/routes'
 import { Flowbite } from 'flowbite-react'
 
+import { QueryClient, QueryClientProvider } from 'react-query'
+const clientQuery = new QueryClient()
+
 const root = document.getElementById('root')!
 
 createRoot(root).render(
   <StrictMode>
     <Flowbite>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={clientQuery}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </Flowbite>
   </StrictMode>,
 )
