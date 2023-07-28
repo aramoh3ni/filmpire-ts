@@ -1,19 +1,17 @@
-import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
 
 import { Movie } from '@/types'
+import APIClient, { APIClientReturn } from '@/services/apiClient'
 
-const TMDB_API_KEY = import.meta.env.VITE_REACT_APP_TMDB_KEY
-const BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL
 const PAGE = 1
 
-export const fetchMovies = async (): Promise<Movie[]> => {
-  const response = await axios.get<{ results: Movie[] }>(
-    `${BASE_URL}/movie/popular?page=${PAGE}&api_key=${TMDB_API_KEY}`,
-  )
+const END_POINT = `/movie/popular?page=${PAGE}`
 
-  return response.data.results
-}
+const apiClient = new APIClient<Movie>(END_POINT)
 
 export const useMovieQuery = () =>
-  useQuery<Movie[], Error>(['movies'], fetchMovies)
+  useQuery<APIClientReturn<Movie>, Error>({
+    queryKey: ['movies'],
+    queryFn: apiClient.getAll,
+    staleTime: 10 * 1000,
+  })
