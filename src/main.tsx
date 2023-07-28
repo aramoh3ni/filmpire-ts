@@ -7,7 +7,7 @@ import { RouterProvider } from 'react-router-dom'
 import { router } from '@/routes'
 import { Flowbite } from 'flowbite-react'
 
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 const clientQuery = new QueryClient()
 
 const root = document.getElementById('root')!
