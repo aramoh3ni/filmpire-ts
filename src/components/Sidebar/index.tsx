@@ -19,7 +19,7 @@ const DEMO_CATEGORIES = [
 
 export const Sidebar = () => {
   return (
-    <Side color="gray" className="w-full">
+    <Side color="gray" className="w-72 min-w-full">
       <Side.Items>
         <Side.ItemGroup>
           <Side.Item icon={HiViewGrid}>
