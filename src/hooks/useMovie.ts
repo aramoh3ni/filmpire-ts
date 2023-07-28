@@ -15,4 +15,5 @@ export const fetchMovies = async (): Promise<Movie[]> => {
   return response.data.results
 }
 
-export const useMovieQuery = () => useQuery(['movies'], fetchMovies)
+export const useMovieQuery = () =>
+  useQuery<Movie[], Error>(['movies'], fetchMovies)
