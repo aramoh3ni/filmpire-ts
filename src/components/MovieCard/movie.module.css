@@ -1,0 +1,19 @@
+.container {
+  @apply relative w-full
+}
+
+.cardDetail {
+  @apply bg-black/40 h-full w-full absolute transition duration-300 ease-in-out rounded-2xl z-20 flex flex-col justify-center items-center
+}
+
+.cardTitle {
+  @apply w-4/5 text-ellipsis whitespace-nowrap overflow-hidden text-lg font-medium md:font-semibold tracking-tight md:text-center md:text-gray-100
+}
+
+.cardImageContainer {
+  @apply rounded-2xl overflow-hidden  transition duration-300 ease-in-out
+}
+
+.cardImage {
+  @apply w-full transition duration-300 ease-in-out hover:scale-110
+}
